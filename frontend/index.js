@@ -3,8 +3,7 @@ window.onload = function(){
     
     const messages = document.getElementById("messages")
     const myform = document.getElementById("form")
-
-    myform.addEventListener("submit",function(e){
+ myform.addEventListener("submit",function(e){
         e.preventDefault()
         console.log("submitted form");
         const formData = new FormData(myform)
@@ -19,6 +18,19 @@ window.onload = function(){
         
     })
     console.log("window loaded");
+
+
+    if (window["WebSocket"]){
+        conn = new WebSocket("ws://"+document.location.host+"/ws")
+        console.log(conn);
+        
+        console.log("supports websockets");
+        
+    }else{
+        this.alert("this browser does not support websockets")
+    }
+
+   
     
 }
 
