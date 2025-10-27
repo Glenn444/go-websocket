@@ -21,7 +21,7 @@ window.onload = function () {
 
     console.log("socket: ",socket);
     
-    if (socket.readState == 1) {
+    if (socket.readyState == 1) {
       console.log("ready state");
       socket.send(message);
     }
