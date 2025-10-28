@@ -5,9 +5,7 @@ window.onload = function () {
 
   if (window["WebSocket"]) {
     socket = new WebSocket("ws://" + document.location.host + "/ws");
-    console.log(socket);
-
-    console.log("supports websockets");
+  
   } else {
     this.alert("this browser does not support websockets");
   }
